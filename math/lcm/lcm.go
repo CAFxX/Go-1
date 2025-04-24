@@ -11,7 +11,7 @@ func Lcm(a, b int64) int64 {
 	ua, ub := abs(a), abs(b)
 	h, l := bits.Mul64(ua, ub)
 	g := gcd.Iterative(a, b)
-	r := bits.Div64(h, l, uint64(g))
+	r, _ := bits.Div64(h, l, uint64(g))
 	return int64(r)
 }
 
